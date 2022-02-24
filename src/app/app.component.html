@@ -1,0 +1,14 @@
+<div>
+
+    <app-data-fetching
+    (fetchedArray)="arrayData($event)"
+    ></app-data-fetching>
+    
+
+    
+    <app-table-data
+    [Array]="array"
+    (givemeItemforDelete)="todoItemDeletion($event)"
+    ></app-table-data>
+
+</div>
