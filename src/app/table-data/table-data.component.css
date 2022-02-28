@@ -1,23 +1,4 @@
-
-#main{
-    display: flex;
-    justify-content: center;
-    background-color: #ccc;
-
-}
-td{
-    border : 2px solid black;
-    padding: 5px;
-}
-tr:nth-child(even){
-    background-color: #ddd;
-}
-thead>tr{
-    background-color: yellow;
-    color: red;
-    font-size: large;
-    font-weight: bold;
-}
-tr:nth-child(odd){
-    background-color: #fff;
+a{
+    text-decoration: none;
+    color: black;
 }

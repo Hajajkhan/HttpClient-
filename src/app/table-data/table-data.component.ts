@@ -1,26 +1,23 @@
-import { Component, OnChanges, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { DynamicService } from '../dynamic.service';
+import { Todo } from '../dataType';
+
 
 @Component({
   selector: 'app-table-data',
   templateUrl: './table-data.component.html',
   styleUrls: ['./table-data.component.css']
 })
-export class TableDataComponent implements OnChanges {
+export class TableDataComponent implements OnInit {
 
-  @Input() Array:any;
+  array:Todo[]=[];
 
-  @Output() givemeItemforDelete = new EventEmitter;
-  public items: any[] = [];
+  constructor(public service:DynamicService){}
 
-  constructor() { }
-
-  ngOnChanges(changes: any): void {
-    if (changes['Array']) {
-      this.items = changes['Array'].currentValue;
-      console.log({items: this.items})
-  }
-  }
-  deleteTodoItem(index:any){
-    this.givemeItemforDelete.emit(index);
+  ngOnInit(): void {
+      this.service.getarray().subscribe(data=>{
+        this.array = data.slice(0, 50)
+        //console.log(this.array);
+      })
   }
 }

@@ -1,0 +1,14 @@
+<div id="main">
+    <table class= "table table-success table-striped">
+        <thead>
+            <tr>
+                <td>Title</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of array; index as i">
+                <td>{{item.title}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

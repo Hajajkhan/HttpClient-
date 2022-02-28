@@ -1,28 +1,29 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './dynamic.module';
 import { AppComponent } from './app.component';
-
 import { HttpClientModule } from '@angular/common/http';
+
+import { NavbarComponent } from './navbar/navbar.component';
 import { TableDataComponent } from './table-data/table-data.component';
-import { DataFetchingComponent } from './data-fetching/data-fetching.component';
-import { TableIdComponent } from './table-id/table-id.component';
-import { TableTitleComponent } from './table-title/table-title.component';
+import { TitleComponent } from './title/title.component';
+import { TododetailComponent } from './tododetail/tododetail.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     TableDataComponent,
-    DataFetchingComponent,
-    TableIdComponent,
-    TableTitleComponent,
+    NavbarComponent,
+    TitleComponent,
+    TododetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ],
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

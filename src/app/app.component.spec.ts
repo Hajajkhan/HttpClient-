@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'DataFetching'`, () => {
+  it(`should have as title 'Dynamic-Routing'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('DataFetching');
+    expect(app.title).toEqual('Dynamic-Routing');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('DataFetching app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('Dynamic-Routing app is running!');
   });
 });

@@ -1,20 +1,30 @@
 <div id="main">
-    <table>
+    <table class="table table-hover">
         <thead>
             <tr>
                 <td>Id</td>
                 <td>Title</td>
                 <td>Completed</td>
-                <td>Hello</td>
             </tr>
         </thead>
-        <tbody *ngIf="items && items.length > 0">
-            <tr *ngFor="let item of items; index as i">
-                <td>{{item.id}}</td>
-                <td>{{item.title}}</td>
-                <td>{{item.completed}}</td>
-                <td><button class="btn btn-danger" (click)="deleteTodoItem(i)">Delete</button></td>
+        <tbody>
+            <tr class="table-active"  *ngFor="let item of array; index as i">
+                <td>
+                    <a routerLink="/table-data/{{item.id}}">
+                        <span>{{item.id}}</span>
+                    </a>
+                </td>
+                <td>
+                    <a routerLink="/table-data/{{item.id}}">
+                        <span>{{item.title}}</span>
+                    </a>
+                </td>
+                <td>
+                <a routerLink="/table-data/{{item.id}}">
+                    <span>{{item.completed}}</span>
+                </a>
             </tr>
         </tbody>
     </table>
 </div>
+  
