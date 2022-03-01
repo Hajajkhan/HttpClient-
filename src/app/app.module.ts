@@ -1,28 +1,25 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './dynamic.module';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule,} from '@angular/common/http';
+import { FormComponent } from './form/form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { NavbarComponent } from './navbar/navbar.component';
-import { TableDataComponent } from './table-data/table-data.component';
-import { TitleComponent } from './title/title.component';
-import { TododetailComponent } from './tododetail/tododetail.component';
-
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TableDataComponent,
-    NavbarComponent,
-    TitleComponent,
-    TododetailComponent
+    FormComponent,
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
+    BrowserModule,AppRoutingModule,HttpClientModule,FormsModule,
+    BrowserAnimationsModule,
+    MatInputModule,MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

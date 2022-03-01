@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { DynamicService } from './dynamic.service';
+import { CrudServiceService } from './crud-service.service';
 
-describe('DynamicService', () => {
-  let service: DynamicService;
+describe('CrudServiceService', () => {
+  let service: CrudServiceService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(DynamicService);
+    service = TestBed.inject(CrudServiceService);
   });
 
   it('should be created', () => {

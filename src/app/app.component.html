@@ -1,2 +1,36 @@
-<app-navbar></app-navbar>
+<form class="example-form" #userPost="ngForm" (ngSubmit)="onSubmit(userPost.value, valueTitle, valueBody)">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Title</mat-label>
+    <input matInput [(ngModel)]="title" #valueTitle="ngModel"  name="title"  placeholder="Enter the Title">
+  </mat-form-field>
+  <br>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Body</mat-label>
+    <textarea matInput [(ngModel)]="body" #valueBody="ngModel" name="body" placeholder="Enter the Detail"></textarea>
+  </mat-form-field><br>
+  <button *ngIf="showButton" type="submit"  mat-stroked-button color="primary">Add Todo</button>
+  <button type="button" *ngIf="showupdateButton" (click)="updatePosts(userPost.value)" mat-stroked-button color="primary">Update</button>
+</form>
+<br>
+<div>
+  <div class="mat-elevation-z8">
+    <table class="table table-bordered">
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Body</th>
+        <th width="220px">Action</th>
+      </tr>
+      <tr  *ngFor="let post of posts, index as i">
+        <td>{{ post.id }}</td>
+        <td>{{ post.title }}</td>
+        <td>{{ post.body }}</td>
+        <td>
+          <a href="#" [routerLink]="['/post/', post.id, 'view']" class="btn btn-info">View</a>
+          <a (click)="editPost(post, i)" class="btn btn-primary">Edit</a>
+          <button type="button" (click)="deletePost(post.id, i)" class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+    </table>
+  </div>
 <router-outlet></router-outlet>
